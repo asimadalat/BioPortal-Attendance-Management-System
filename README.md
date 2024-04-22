@@ -1,2 +1,9 @@
 # BioPortal-Attendance-Management-System
-desc
+
+## Summary
+This is an attendance management system using biometrics to validate the attendance of students, featuring two components. The fingerprint verification terminal operates by running the Python script on a Raspberry Pi. The script uses a modified version of the examples/fingerprint_simpletest.rpi.py and examples/fingerprint_template_file_compare.py scripts which can be found in the Adafruit-CircuitPython-Fingerprint repository (https://github.com/adafruit/Adafruit_CircuitPython_Fingerprint). The script enrolls fingerprints and stores the templates in a MySQL database. During the verification process, the fingerprint scanned is compared to the templates in the database and if a match is found, the corresponding student's present status is updated.
+
+The BioPortal desktop application can then access the database, in this context over a shared local network, to view details including the present status of all students. It also has search and filter functionality as well as features such as themes and the option for a user to change their password directly from the application.  The analytics page shows attendance metrics and data visualisations. The desktop application is alss designed to handle unforeseen circumstances involving the terminal working improperly by allowing staff the option to mark students present or absent manually. A member of staff would only need to do this in certain cases and the system is designed to be fully automated to handle attendance tracking.
+
+## Demonstration Video
+Please visit the below page to view the video demonstrating the features of the BioPortal Attendance Management System, including how the database facilitates the real-time reading of attendance status by the desktop application as students verify their fingerprints using the sensor: https://youtu.be/aA_EF-mDpeU
